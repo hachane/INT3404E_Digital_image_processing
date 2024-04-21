@@ -93,8 +93,8 @@ def median_filter(img, filter_size=3):
     pad_size = int(filter_size/2)
     for i in range(pad_size, h + pad_size):
         for j in range(pad_size, w + pad_size):
-            tmp = padded_img[i - pad_size:i + pad_size + 1, j - pad_size:j + pad_size + 1]
-            res = np.median(tmp)
+            cur_sec = padded_img[i - pad_size:i + pad_size + 1, j - pad_size:j + pad_size + 1]
+            res = np.median(cur_sec)
             med_img[i - pad_size, j - pad_size] = res
 
     return med_img
